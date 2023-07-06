@@ -422,6 +422,6 @@ if __name__ == '__main__':
         'TCN'
     '''
 
-    ModelName = 'TCN'
+    ModelName = 'AlexNet'
     model = ModelSelect(ModelName)
     cross_validation(df_train, labels_train, df_test, labels_test, K, model,ModelName)
