@@ -69,13 +69,13 @@ def cross_validation(df_train, labels_train, df_test, labels_test, k, model,MODE
         test_predict.append(predict_p)
 
         matrix = confusion_matrix(label_test, test_predict3)
-        accuracy4 = matrix[1][1]/(matrix[1][1]+matrix[1][0])
+        accuracy4 = matrix[1][1]/(matrix[1][1]+matrix[0][1])
         test_precision.append(accuracy4)
 
-        accuracy5 = matrix[1][1]/(matrix[1][1]+matrix[0][1])
+        accuracy5 = matrix[1][1]/(matrix[1][1]+matrix[1][0])
         test_recall.append(accuracy5)
 
-        accuracy7 = matrix[0][0]/(matrix[1][0]+matrix[0][0])
+        accuracy7 = matrix[0][0]/(matrix[0][1]+matrix[0][0])
         test_TE_Score.append(accuracy7)
 
         fpr, tpr, _ = roc_curve(labels_test.ravel(), y_score.ravel())
